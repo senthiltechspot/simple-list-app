@@ -27,55 +27,44 @@ const DrawersComp = (props) => {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Account Details</DrawerHeader>
+          <DrawerHeader>{props.data.title}</DrawerHeader>
           <DrawerBody>
             <div className="drawerdata">
               <Flex h={"100px"} flexDirection={"column"} gap={"5"} p={"7"}>
+                <Spacer />
                 <Box flex="1">
-                  <Heading size="md">Contact Name :</Heading>
-                  <h1 size="md">{props.data.name}</h1>
+                  <img src={props.data.urlToImage} alt="" />
+                </Box>
+                <Box flex="1">
+                  <h1 size="md">{props.data.description}</h1>
                 </Box>
                 <Spacer />
                 <Box flex="1">
-                  <Heading size="md">Designation :</Heading>
-                  <h1 size="md">{props.data.name}</h1>
+                  <Heading size="md">Content :</Heading>
+                  <h1 size="md">{props.data.content}</h1>
                 </Box>
-                <Spacer />
-                <Box flex="1">
-                  <Heading size="md">email :</Heading>
-                  <h1 size="md">{props.data.email}</h1>
+                {/* <Box flex="1">
+                  <Heading size="md">Author :</Heading>
+                  <h1 size="md">{props.data.source.author}</h1>
+                </Box> */}
+                <Box>
+                  <a
+                    href={props.data.url}
+                    target="_blank"
+                    className="ReadButton"
+                  >
+                    Read More
+                    {/* <Button colorScheme="yellow">Yellow</Button> */}
+                  </a>
                 </Box>
-                <Spacer />
-
-                <Box flex="1">
-                  <Heading size="md">phone :</Heading>
-                  <h1 size="md">{props.data.phone}</h1>
-                </Box>
-                <Spacer />
               </Flex>
-              <Flex h={"100px"} flexDirection={"column"} gap={"5"} p={"7"}>
+              {/* <Flex h={"100px"} flexDirection={"column"} gap={"5"} p={"7"}>
                 <Box flex="1">
                   <Heading size="md">Address :</Heading>
-                  <h1 size="md">{props.data.address.suite}</h1>
+                  <h1 size="md">{props.data.content}</h1>
                 </Box>
                 <Spacer />
-                <Box flex="1">
-                  <Heading size="md">Street :</Heading>
-                  <h1 size="md">{props.data.address.street}</h1>
-                </Box>
-                <Spacer />
-                <Box flex="1">
-                  <Heading size="md">City :</Heading>
-                  <h1 size="md">{props.data.address.city}</h1>
-                </Box>
-                <Spacer />
-
-                <Box flex="1">
-                  <Heading size="md">ZipCode :</Heading>
-                  <h1 size="md">{props.data.address.zipcode}</h1>
-                </Box>
-                <Spacer />
-              </Flex>
+              </Flex> */}
             </div>
           </DrawerBody>
 
